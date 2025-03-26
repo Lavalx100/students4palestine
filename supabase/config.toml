@@ -1,0 +1,9 @@
+# Use your project's ref here (the one after https://xxxx.supabase.co)
+project_id = "vkfycoubfwywrzwgabld"
+
+[functions.link-preview]
+enabled = true
+import_map = "./functions/link-preview/deno.json"
+entrypoint = "./functions/link-preview/index.ts"
+verify_jwt = false
+
