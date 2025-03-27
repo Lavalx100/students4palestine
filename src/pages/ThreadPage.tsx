@@ -176,12 +176,22 @@ const Comment = ({
             </span>
           </div>
 
-          <p className="text-foreground whitespace-pre-line">{content}</p>
+          {/* Use linkifyHtml to convert URLs in the comment content into clickable links */}
+          <div
+            className="text-foreground whitespace-pre-line"
+            dangerouslySetInnerHTML={{
+              __html: linkifyHtml(content, {
+                target: '_blank',
+                rel: 'noopener noreferrer'
+              })
+            }}
+          />
         </div>
       </div>
     </div>
   );
 };
+
 
 /*
   4) Main ThreadPage
